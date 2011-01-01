@@ -11,19 +11,25 @@ Installation
 Usage
 -----
 To see a list of all available services:
+
 `$ svc list`
 
 To add a new service:
+
 `$ svc add <nickname> <path_to_plist>`
 	
 To delete a service:
+
 `$ svc delete <nickname>`
 	
 To start a service:
+
 `$ svc start <nickname>`
 	
 To stop a service:
+
 `$ svc stop <nickname>`
 	
 To restart a service:
+
 `$ svc restart <nickname>`
