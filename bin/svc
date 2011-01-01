@@ -11,4 +11,4 @@ rescue LoadError
   require 'svc'
 end
 
-SVC.start
+Svc.start

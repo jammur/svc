@@ -1,4 +1,4 @@
-class Svc
+class Svc < Thor
   include Thor::Actions
   
   PATH = File.expand_path("~/.svc")
