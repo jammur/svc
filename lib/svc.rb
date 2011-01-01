@@ -22,8 +22,12 @@ class Svc < Thor
   desc "list", "lists all available services"
   def list
     load_svc_hash
-    puts "Available services:"
-    @hash.each {|nick, plist| puts "  #{nick}: #{plist}" }
+    if @hash.empty?
+      puts "There are no available services"
+    else
+      puts "Available services:"
+      @hash.each {|nick, plist| puts "  #{nick}: #{plist}" }
+    end
   end
   
   desc "start <nickname>", "starts specified service"
@@ -47,7 +51,7 @@ class Svc < Thor
   no_tasks do  
     def load_svc_hash
       path = File.expand_path(PATH)
-      create_file(PATH, "{}") unless File.exist?(PATH)
+      create_file(PATH, "{}", :verbose => false) unless File.exist?(PATH)
       f = File.open(PATH, "r")
       @hash = JSON.parse(f.read)
       f.close
