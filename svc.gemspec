@@ -15,8 +15,6 @@ Gem::Specification.new do |s|
   s.add_dependency "thor"
   s.add_dependency "json"
   
-  s.rubyforge_project = "svc"
-  
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
